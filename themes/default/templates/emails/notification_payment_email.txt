@@ -1,0 +1,7 @@
+{__("Hi")} {$first_name} {$last_name},
+
+{__("To complete the activation process, please follow this link")}:
+<a href="{$email_verification_code}">{$email_verification_code}</a>
+
+{__("Welcome to")} {$system['system_title']}
+{$system['system_title']} {__("Team")}
