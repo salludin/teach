@@ -137,22 +137,17 @@
                     <div class="order-3 col-lg-12 order-lg-3">
                         <div class="card">
                             <div class="card-body">
-                                <h3>Deskripsi</h3>
                                 {if !is_empty($event['event_description'])}
                                     <div class="">
                                         <div class="js_readmore overflow-hidden">
+                                        <h3>Deskripsi</h3>
                                             {$event['event_description']}
+                                        <li class="divider mtb10"></li>
+                                        <h3>Tujuan Pelatihan</h3>
+                                        {$event['event_description']}
                                         </div>
                                     </div>
                                 {/if}
-                                <h3>Tujuan Pelatihan</h3>
-                                {if !is_empty($event['event_description'])}
-                                    <div class="">
-                                        <div class="js_readmore overflow-hidden">
-                                            {$event['event_description']}
-                                        </div>
-                                    </div>
-                                {/if}                                
                                 </div>
                                 </div>
                     </div>
