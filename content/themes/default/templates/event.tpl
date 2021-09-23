@@ -139,13 +139,13 @@
                             <div class="card-body">
                                 {if !is_empty($event['event_description'])}
                                     <div class="">
-                                        <div class="js_readmore overflow-hidden">
+                                        <!-- <div class="js_readmore overflow-hidden"> -->
                                         <h3>Deskripsi</h3>
                                             {$event['event_description']}
                                         <li class="divider mtb10"></li>
                                         <h3>Tujuan Pelatihan</h3>
                                         {$event['event_description']}
-                                        </div>
+                                        <!-- </div> -->
                                     </div>
                                 {/if}
                                 </div>
