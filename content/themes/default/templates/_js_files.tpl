@@ -317,7 +317,7 @@
     <!-- Slick Slider -->
 
     <!-- TinyMCE -->
-    {if $page == "admin" || $page == "blogs" || $page == "forums"}
+    {if $page == "admin" || $page == "blogs" || $page == "forums" || $page == "create_invoice"}
         <script src="{$system['system_url']}/includes/assets/js/plugins/tinymce/tinymce.min.js"></script>
     {/if}
     <!-- TinyMCE -->
