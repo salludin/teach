@@ -41,6 +41,6 @@ try {
 }
 
 // page footer
-page_footer("event_create");
+page_footer("create_event");
 
 ?>
