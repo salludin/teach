@@ -7,7 +7,7 @@
 <!-- page content -->
 <div class="container mt20 {if $user->_logged_in}offcanvas{/if}">
     <div class="row">
-        {elseif $view == "new"}
+        {if $view == "new"}
             
             <!-- side panel -->
             <div class="col-md-4 col-lg-3 offcanvas-sidebar js_sticky-sidebar">
