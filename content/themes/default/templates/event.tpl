@@ -138,7 +138,7 @@
                         <div class="card">
                             <div class="card-body">
                                 {if !is_empty($event['event_description'])}
-                                    <div class="">
+                                    <div class="about-list">
                                         <!-- <div class="js_readmore overflow-hidden"> -->
                                         <h3>Deskripsi</h3>
                                             {$event['event_description']}
