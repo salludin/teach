@@ -125,7 +125,7 @@
                         <div class="card">
                                 {if $event['event_cover_id']}
                         <!-- full-cover -->
-                        <img class="js_position-cover-full js_lightbox" data-init-position="{$event['event_cover_position']}" data-id="{$event['event_cover_id']}" data-image="{$event['event_cover_full']}" data-context="album" src="{$event['event_cover']}" alt="{$event['event_title']}" style="min-height: 366px;">
+                        <img class="js_lightbox" style="min-height: 366px;" data-init-position="{$event['event_cover_position']}" data-id="{$event['event_cover_id']}" data-image="{$event['event_cover_full']}" data-context="album" src="{$event['event_cover']}" alt="{$event['event_title']}">
                         <!-- full-cover -->
                         
 
