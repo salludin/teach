@@ -207,6 +207,7 @@ RewriteRule ^events/manage/?$ events.php?view=manage [L,QSA]
 RewriteRule ^events/([^/]+)/?$ event.php?event_id=$1 [L,QSA]
 RewriteRule ^events/([^/]+)/([^/]+)/?$ event.php?event_id=$1&view=$2 [L,QSA]
 RewriteRule ^events/([^/]+)/([^/]+)/([^/]+)/?$ event.php?event_id=$1&view=$2&id=$3 [L,QSA]
+RewriteRule ^events/new/?$ events_create.php?view=view [L,QSA]
 
 # Blogs
 RewriteRule ^articles/?$ index.php?view=articles [L,QSA]
