@@ -136,7 +136,7 @@
                             <div class="profile-cover-change">
                                 <i class="fa fa-camera js_x-uploader" data-handle="cover-event" data-id="{$event['event_id']}"></i>
                             </div>
-                            <div class="profile-cover-position {if !$event['event_cover']}x-hidden{/if}">
+                            <!--<div class="profile-cover-position {if !$event['event_cover']}x-hidden{/if}">
                                 <input class="js_position-picture-val" type="hidden" name="position-picture-val">
                                 <i class="fa fa-crop-alt js_init-position-picture" data-handle="event" data-id="{$event['event_id']}"></i>
                             </div>
@@ -145,7 +145,7 @@
                             </div>
                             <div class="profile-cover-position-buttons">
                                 <i class="fa fa-times fa-fw js_cancel-position-picture"></i>
-                            </div>
+                            </div>-->
                             <div class="profile-cover-delete {if !$event['event_cover']}x-hidden{/if}">
                                 <i class="fa fa-trash js_delete-cover" data-handle="cover-event" data-id="{$event['event_id']}"></i>
                             </div>
