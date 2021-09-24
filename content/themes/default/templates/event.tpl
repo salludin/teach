@@ -130,6 +130,38 @@
                         
 
                     {/if}
+                    {if $event['i_admin']}
+                        <!-- buttons -->
+                        <div class="profile-cover-buttons">
+                            <div class="profile-cover-change">
+                                <i class="fa fa-camera js_x-uploader" data-handle="cover-event" data-id="{$event['event_id']}"></i>
+                            </div>
+                            <div class="profile-cover-position {if !$event['event_cover']}x-hidden{/if}">
+                                <input class="js_position-picture-val" type="hidden" name="position-picture-val">
+                                <i class="fa fa-crop-alt js_init-position-picture" data-handle="event" data-id="{$event['event_id']}"></i>
+                            </div>
+                            <div class="profile-cover-position-buttons">
+                                <i class="fa fa-check fa-fw js_save-position-picture"></i>
+                            </div>
+                            <div class="profile-cover-position-buttons">
+                                <i class="fa fa-times fa-fw js_cancel-position-picture"></i>
+                            </div>
+                            <div class="profile-cover-delete {if !$event['event_cover']}x-hidden{/if}">
+                                <i class="fa fa-trash js_delete-cover" data-handle="cover-event" data-id="{$event['event_id']}"></i>
+                            </div>
+                        </div>
+
+                        <!-- loaders -->
+                        <div class="profile-cover-change-loader">
+                            <div class="progress x-progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="profile-cover-position-loader">
+                            <i class="fa fa-arrows-alt mr5"></i>{__("Drag to reposition cover")}
+                        </div>
+                        <!-- loaders -->
+                    {/if}
                                 </div>                            
                                 </div>
                     </div>

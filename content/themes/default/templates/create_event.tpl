@@ -23,7 +23,7 @@
                         <i class="fa fa-edit mr10"></i>{__("Create New Event")}
                     </div>
 
-                    <div class="js_ajax-forms-html" data-url="posts/article.php?do=create">
+                    <div class="js_ajax-forms-html" data-url="pages_groups_events/create.php?type=event&do=create">
                         <div class="card-body">
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
@@ -34,6 +34,13 @@
                                 </div>
                             </div>
 
+                    <div class="form-group form-row">
+                        <label class="col-md-2 form-control-label" for="location">{__("Location")}</label>
+                        <div class="col-md-10">
+                        <input type="text" class="form-control js_geocomplete" name="location" id="location">
+                    </div>
+                    </div>
+
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
                                     {__("Description")}
@@ -43,25 +50,6 @@
                                 </div>
                             </div>
 
-                            <div class="form-group form-row">
-                                <label class="col-md-2 form-control-label">
-                                    {__("Cover")}
-                                </label>
-                                <div class="col-md-10">
-                                    <div class="x-image">
-                                        <button type="button" class="close x-hidden js_x-image-remover" title='{__("Remove")}'>
-                                            <span>×</span>
-                                        </button>
-                                        <div class="x-image-loader">
-                                            <div class="progress x-progress">
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
-                                        <input type="hidden" class="js_x-image-input" name="cover">
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
@@ -91,14 +79,6 @@
                     </div>
                     </div>
 
-                            <div class="form-group form-row">
-                                <label class="col-md-2 form-control-label">
-                                    {__("Tags")}
-                                </label>
-                                <div class="col-md-10">
-                                    <input class="form-control" name="tags">
-                                </div>
-                            </div>
                     <!-- custom fields -->
                     {if $custom_fields}
                     {include file='__custom_fields.tpl' _custom_fields=$custom_fields _registration=true}
