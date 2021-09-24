@@ -178,7 +178,9 @@
                                             {$event['event_description']}
                                         <li class="divider mtb10"></li>
                                         <h3>Tujuan Pelatihan</h3>
-                                        {$event['event_description']}
+                                        {foreach $custom_fields_training_objective['basic'] as $custom_field_training_objective}
+                                        {$custom_field_training_objective['value']}
+                                        {/foreach}
                                         <!-- </div> -->
                                     </div>
                                 {/if}

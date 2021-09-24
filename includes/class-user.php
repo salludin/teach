@@ -13439,6 +13439,58 @@ class User {
         return $fields;
     }
 
+    public function get_custom_fields_training_objective($args = []) {
+        global $db, $system;
+        $fields = [];
+        /* prepare "for" [user|page|group|event] - default -> user */
+        $args['for'] = (isset($args['for']))? $args['for']: "user";
+        if(!in_array($args['for'], array('user', 'page', 'group', 'event'))) {
+            _error(400);
+        }
+        /* prepare "get" [registration|profile|settings] - default -> registration */
+        $args['get'] = (isset($args['get']))? $args['get']: "registration";
+        if(!in_array($args['get'], array('registration', 'profile', 'settings'))) {
+            _error(400);
+        }
+        /* prepare where_query */
+        $where_query = "WHERE field_for = '".$args['for']."'";
+        if($args['get'] == "registration") {
+            $where_query .= " AND in_registration = '1'";
+        } elseif ($args['get'] == "profile") {
+            $where_query .= " AND in_profile = '1'";
+        }
+        $get_fields = $db->query("SELECT * FROM custom_fields ".$where_query." AND label = 'Training Objectives' ORDER BY field_order ASC") or _error("SQL_ERROR_THROWEN");
+        if($get_fields->num_rows > 0) {
+            while($field = $get_fields->fetch_assoc()) {
+                if($field['type'] == "selectbox") {
+                    $field['options'] = explode(PHP_EOL, $field['select_options']);
+                }
+                if($args['get'] == "registration") {
+                    /* no value neeeded */
+                    $fields[] = $field;
+                } else {
+                    /* valid node_id */
+                    if(!isset($args['node_id'])) {
+                        _error(400);
+                    }
+                    /* get the custom field value */
+                    $get_field_value = $db->query(sprintf("SELECT value FROM custom_fields_values WHERE field_id = %s AND node_id = %s AND node_type = %s", secure($field['field_id'], 'int'), secure($args['node_id'], 'int'), secure($args['for']) )) or _error("SQL_ERROR_THROWEN");
+                    $field_value = $get_field_value->fetch_assoc();
+                    if($field['type'] == "selectbox") {
+                        $field['value'] = $field['options'][$field_value['value']];
+                    } else {
+                        $field['value'] = $field_value['value'];
+                    }
+                    if($args['get'] == "profile" && is_empty($field['value'])) {
+                        continue;
+                    }
+                    $fields[$field['place']][] = $field;
+                }
+            }
+        }
+        return $fields;
+    }
+
 
     /**
      * set_custom_fields

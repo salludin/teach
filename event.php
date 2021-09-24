@@ -57,7 +57,7 @@ try {
 		case '':
 			/* get custom fields */
 			$smarty->assign('custom_fields', $user->get_custom_fields( array("for" => "event", "get" => "profile", "node_id" => $event['event_id']) ));
-
+			$smarty->assign('custom_fields_training_objective', $user->get_custom_fields_training_objective( array("for" => "event", "get" => "profile", "node_id" => $event['event_id']) ));
 			/* get invites */
 			$event['invites'] = $user->get_event_invites($event['event_id']);
 
