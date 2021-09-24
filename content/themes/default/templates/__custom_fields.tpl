@@ -23,9 +23,9 @@
     {/foreach}
 {else}
 	{foreach $_custom_fields as $custom_field}
-	    <div class="form-group {if $_inline}form-row{/if}">
-	    	<label class="form-control-label {if $_inline}col-md-3{/if}">{__($custom_field['label'])}</label>
-            {if $_inline}<div class="col-md-9">{/if}
+	    <div class="form-group form-row">
+	    	<label class="form-control-label col-md-2">{__($custom_field['label'])}</label>
+            <div class="col-md-8">
             {if $custom_field['type'] == "textbox"}
                 <input type="text" name="fld_{$custom_field['field_id']}" class="form-control" value="{$custom_field['value']}">
             {elseif $custom_field['type'] == "textarea"}
@@ -43,7 +43,7 @@
                     {__($custom_field['description'])}
                 </span>
             {/if}
-            {if $_inline}</div>{/if}
+            </div>
 	    </div>
 	{/foreach}
 {/if}
