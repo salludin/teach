@@ -43,7 +43,7 @@
                                 </div>
                             </div>
 
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label class="form-control-label">{__("Start Date")}</label>
                         <div class="input-group date js_datetimepicker" id="start_date" data-target-input="nearest">
                             <input type='text' class="form-control datetimepicker-input" data-target="#start_date" name="start_date" />
@@ -60,7 +60,7 @@
                                 <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
