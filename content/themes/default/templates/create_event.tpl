@@ -43,25 +43,6 @@
                                 </div>
                             </div>
 
-                    <div class="form-group">
-                        <label class="form-control-label">{__("Start Date")}</label>
-                        <div class="input-group date js_datetimepicker" id="start_date" data-target-input="nearest">
-                            <input type='text' class="form-control datetimepicker-input" data-target="#start_date" name="start_date" />
-                            <div class="input-group-append" data-target="#start_date" data-toggle="datetimepicker">
-                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-control-label">{__("End Date")}</label>
-                        <div class="input-group date js_datetimepicker" id="end_date" data-target-input="nearest">
-                            <input type='text' class="form-control datetimepicker-input" data-target="#end_date" name="end_date" />
-                            <div class="input-group-append" data-target="#end_date" data-toggle="datetimepicker">
-                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                            </div>
-                        </div>
-                    </div>
-
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
                                     {__("Cover")}
@@ -123,6 +104,24 @@
                     {include file='__custom_fields.tpl' _custom_fields=$custom_fields _registration=true}
                     {/if}
                     <!-- custom fields -->
+                     <div class="form-group">
+                        <label class="form-control-label">{__("Start Date")}</label>
+                        <div class="input-group date js_datetimepicker" id="start_date" data-target-input="nearest">
+                            <input type='text' class="form-control datetimepicker-input" data-target="#start_date" name="start_date" />
+                            <div class="input-group-append" data-target="#start_date" data-toggle="datetimepicker">
+                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">{__("End Date")}</label>
+                        <div class="input-group date js_datetimepicker" id="end_date" data-target-input="nearest">
+                            <input type='text' class="form-control datetimepicker-input" data-target="#end_date" name="end_date" />
+                            <div class="input-group-append" data-target="#end_date" data-toggle="datetimepicker">
+                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>                   
                             <!-- error -->
                             <div class="alert alert-danger mb0 x-hidden"></div>
                             <!-- error -->
