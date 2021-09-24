@@ -2,7 +2,7 @@
 	{foreach $_custom_fields as $custom_field}
         <div class="form-group form-row">
             <label class="form-control-label col-md-2"">{__($custom_field['label'])}</label>
-            <div class="col-md-8">
+            <div class="col-md-10">
             {if $custom_field['type'] == "textbox"}
                 <input name="fld_{$custom_field['field_id']}" type="text" class="form-control" placeholder="{__($custom_field['label'])}">
             {elseif $custom_field['type'] == "textarea"}
@@ -27,7 +27,7 @@
 	{foreach $_custom_fields as $custom_field}
 	    <div class="form-group form-row">
 	    	<label class="form-control-label col-md-2">{__($custom_field['label'])}</label>
-            <div class="col-md-8">
+            <div class="col-md-10">
             {if $custom_field['type'] == "textbox"}
                 <input type="text" name="fld_{$custom_field['field_id']}" class="form-control" value="{$custom_field['value']}">
             {elseif $custom_field['type'] == "textarea"}
