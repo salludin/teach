@@ -23,7 +23,8 @@ try {
 		case 'new':
 			// user access
 			user_access();
-
+			// get custom fields
+			$smarty->assign('custom_fields', $user->get_custom_fields( array("for" => "event") ));
 			// page header
 			page_header(__("Create New Event"));
 			break;
