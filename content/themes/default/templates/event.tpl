@@ -153,14 +153,14 @@
                         </div>
 
                         <!-- loaders -->
-                        <div class="profile-cover-change-loader">
+                        <!--<div class="profile-cover-change-loader">
                             <div class="progress x-progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="profile-cover-position-loader">
                             <i class="fa fa-arrows-alt mr5"></i>{__("Drag to reposition cover")}
-                        </div>
+                        </div>-->
                         <!-- loaders -->
                     {/if}
                 </div>
