@@ -43,7 +43,7 @@
                                 </div>
                             </div>
 
-                    <!--<div class="form-group">
+                    <div class="form-group">
                         <label class="form-control-label">{__("Start Date")}</label>
                         <div class="input-group date js_datetimepicker" id="start_date" data-target-input="nearest">
                             <input type='text' class="form-control datetimepicker-input" data-target="#start_date" name="start_date" />
@@ -60,7 +60,7 @@
                                 <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
 
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
@@ -96,7 +96,7 @@
                                 </div>
                             </div>
 
-                    <!--<div class="form-group">
+                    <div class="form-group">
                         <label class="form-control-label" for="privacy">{__("Select Privacy")}</label>
                         <select class="form-control selectpicker" name="privacy">
                             <option value="public" data-content="<div class='option'><div class='icon'><i class='fa fa-globe fa-2x'></i></div><div class='text'><b>{__("Public Event")}</b><br>{__("Anyone can see the event, its users and posts")}.
@@ -106,7 +106,7 @@
                             <option value="secret" data-content="<div class='option'><div class='icon'><i class='fa fa-lock fa-2x'></i></div><div class='text'><b>{__("Secret Event")}</b><br>{__("Only invited users and event users can find the event")}.
                             </div></div>">{__("Secret Event")}</option>
                         </select>
-                    </div>-->
+                    </div>
 
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">

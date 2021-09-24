@@ -323,14 +323,14 @@
     <!-- TinyMCE -->
 
     <!-- Bootstrap selectpicker -->
-    {if $page == "admin" || $page == "groups" || $page == "group" || $page == "events" || $page == "event" || $page == "ads"}
+    {if $page == "admin" || $page == "groups" || $page == "group" || $page == "events" || $page == "event" || $page == "ads" || $page == "create_event"}
         <script src="{$system['system_url']}/includes/assets/js/plugins/bootstrap.select/bootstrap-select.min.js"></script>
         <link rel="stylesheet" type='text/css' href="{$system['system_url']}/includes/assets/js/plugins/bootstrap.select/bootstrap-select.min.css">
     {/if}
     <!-- Bootstrap selectpicker -->
 
     <!-- Bootstrap datetimepicker -->
-    {if $page == "admin" || $page == "groups" || $page == "group" || $page == "events" || $page == "event" || $page == "ads" || ($system['offers_enabled'] && ($page == "index" || $page == "page" || $page == "post" || $page == "directory"))}
+    {if $page == "admin" || $page == "groups" || $page == "group" || $page == "events" || $page == "event" || $page == "ads" || ($system['offers_enabled'] && ($page == "index" || $page == "page" || $page == "post" || $page == "directory" || $page == "create_event"))}
         <script src="{$system['system_url']}/includes/assets/js/plugins/bootstrap.datetimepicker/bootstrap-datetimepicker.min.js"></script>
         <link rel="stylesheet" type='text/css' href="{$system['system_url']}/includes/assets/js/plugins/bootstrap.datetimepicker/bootstrap-datetimepicker.min.css">
     {/if}
