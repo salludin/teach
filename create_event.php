@@ -26,6 +26,10 @@ try {
 			// get custom fields
 			$smarty->assign('custom_fields', $user->get_custom_fields( array("for" => "event") ));
 			// page header
+			// get events categories
+			$categories = $user->get_events_categories();
+			/* assign variables */
+			$smarty->assign('categories', $categories);	
 			page_header(__("Create New Event"));
 			break;
 

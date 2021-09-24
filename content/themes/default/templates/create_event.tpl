@@ -58,9 +58,9 @@
                                 <div class="col-md-10">
                                     <select class="form-control" name="category">
                                         <option>{__("Select Category")}</option>
-                                        <!--{foreach $blogs_categories as $category}
+                                        {foreach $categories as $category}
                                         <option value="{$category['category_id']}">{__($category['category_name'])}</option>
-                                        {/foreach}-->
+                                        {/foreach}
                                     </select>
                                 </div>
                             </div>
