@@ -122,8 +122,8 @@
                     <!-- left panel -->
                     <div class="order-1 col-lg-5 order-lg-1">
                         <div class="card">
-                        <div class="card">
                         <div class="profile-cover-wrapper">
+                        <div class="card">
                                 {if $event['event_cover_id']}
                         <!-- full-cover -->
                         <img class="js_lightbox" style="min-height: 366px;" data-init-position="{$event['event_cover_position']}" data-id="{$event['event_cover_id']}" data-image="{$event['event_cover_full']}" data-context="album" src="{$event['event_cover']}" alt="{$event['event_title']}" >
