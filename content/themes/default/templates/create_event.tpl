@@ -46,7 +46,7 @@
                                     {__("Description")}
                                 </label>
                                 <div class="col-md-10">
-                                    <textarea name="text" class="form-control js_wysiwyg"></textarea>
+                                    <textarea name="description" class="form-control js_wysiwyg"></textarea>
                                 </div>
                             </div>
 

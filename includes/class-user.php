@@ -9513,7 +9513,14 @@ class User {
         /* set custom fields */
         $custom_fields = $this->set_custom_fields($args, "event");
         /* insert new event */
-        $db->query(sprintf("INSERT INTO `events` (event_privacy, event_admin, event_category, event_title, event_location, event_description, event_start_date, event_end_date, event_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)", secure($args['privacy']), secure($this->_data['user_id'], 'int'), secure($args['category'], 'int'), secure($args['title']), secure($args['location']), secure($args['description']), secure($args['start_date'], 'datetime'), secure($args['end_date'], 'datetime'), secure($date) )) or _error("SQL_ERROR_THROWEN");
+        /* HTMLPurifier */
+        require_once(ABSPATH.'includes/libs/HTMLPurifier/HTMLPurifier.auto.php');
+        $config = HTMLPurifier_Config::createDefault();
+        $config->set('HTML.SafeIframe', true);
+        $config->set('URI.SafeIframeRegexp', '%^(https?:)?(\/\/www\.youtube(?:-nocookie)?\.com\/embed\/|\/\/player\.vimeo\.com\/)%');
+        $purifier = new HTMLPurifier($config);
+        $clean_text = $purifier->purify($args['description']);
+        $db->query(sprintf("INSERT INTO `events` (event_privacy, event_admin, event_category, event_title, event_location, event_description, event_start_date, event_end_date, event_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)", secure($args['privacy']), secure($this->_data['user_id'], 'int'), secure($args['category'], 'int'), secure($args['title']), secure($args['location']), secure($clean_text), secure($args['start_date'], 'datetime'), secure($args['end_date'], 'datetime'), secure($date) )) or _error("SQL_ERROR_THROWEN");
         /* get event_id */
         $event_id = $db->insert_id;
         /* insert custom fields values */
