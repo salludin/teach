@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
-                                    {__("Title")}
+                                    {__("Name Your Event")}
                                 </label>
                                 <div class="col-md-10">
                                     <input class="form-control" name="title">
@@ -36,12 +36,31 @@
 
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
-                                    {__("Content")}
+                                    {__("Description")}
                                 </label>
                                 <div class="col-md-10">
                                     <textarea name="text" class="form-control js_wysiwyg"></textarea>
                                 </div>
                             </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label">{__("Start Date")}</label>
+                        <div class="input-group date js_datetimepicker" id="start_date" data-target-input="nearest">
+                            <input type='text' class="form-control datetimepicker-input" data-target="#start_date" name="start_date" />
+                            <div class="input-group-append" data-target="#start_date" data-toggle="datetimepicker">
+                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">{__("End Date")}</label>
+                        <div class="input-group date js_datetimepicker" id="end_date" data-target-input="nearest">
+                            <input type='text' class="form-control datetimepicker-input" data-target="#end_date" name="end_date" />
+                            <div class="input-group-append" data-target="#end_date" data-toggle="datetimepicker">
+                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
 
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
@@ -77,6 +96,18 @@
                                 </div>
                             </div>
 
+                    <div class="form-group">
+                        <label class="form-control-label" for="privacy">{__("Select Privacy")}</label>
+                        <select class="form-control selectpicker" name="privacy">
+                            <option value="public" data-content="<div class='option'><div class='icon'><i class='fa fa-globe fa-2x'></i></div><div class='text'><b>{__("Public Event")}</b><br>{__("Anyone can see the event, its users and posts")}.
+                            </div></div>">{__("Public Event")}</option>
+                            <option value="closed" data-content="<div class='option'><div class='icon'><i class='fa fa-unlock-alt fa-2x'></i></div><div class='text'><b>{__("Closed Event")}</b><br>{__("Only event users can see posts")}.
+                            </div></div>">{__("Closed Event")}</option>
+                            <option value="secret" data-content="<div class='option'><div class='icon'><i class='fa fa-lock fa-2x'></i></div><div class='text'><b>{__("Secret Event")}</b><br>{__("Only invited users and event users can find the event")}.
+                            </div></div>">{__("Secret Event")}</option>
+                        </select>
+                    </div>
+
                             <div class="form-group form-row">
                                 <label class="col-md-2 form-control-label">
                                     {__("Tags")}
@@ -85,7 +116,11 @@
                                     <input class="form-control" name="tags">
                                 </div>
                             </div>
-
+                    <!-- custom fields -->
+                    {if $custom_fields}
+                    {include file='__custom_fields.tpl' _custom_fields=$custom_fields _registration=true}
+                    {/if}
+                    <!-- custom fields -->
                             <!-- error -->
                             <div class="alert alert-danger mb0 x-hidden"></div>
                             <!-- error -->
