@@ -1,6 +1,6 @@
 {if $_registration}
 	{foreach $_custom_fields as $custom_field}
-        <div class="form-group">
+        <div class="form-group form-row">
             <label class="form-control-label">{__($custom_field['label'])}</label>
             {if $custom_field['type'] == "textbox"}
                 <input name="fld_{$custom_field['field_id']}" type="text" class="form-control" placeholder="{__($custom_field['label'])}">
