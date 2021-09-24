@@ -91,7 +91,7 @@
                         <!-- panel [about] -->
 
                         <!-- custom fields [basic] -->
-                        {if $custom_fields['basic']}
+                        <!--{if $custom_fields['basic']}
                             <div class="card">
                                 <div class="card-header bg-transparent">
                                     <i class="fa fa-info-circle mr5"></i>
@@ -110,7 +110,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        {/if}
+                        {/if}-->
                         <!-- custom fields [basic] -->
 
 
@@ -177,9 +177,11 @@
                                         <h3>Deskripsi</h3>
                                             {$event['event_description']}
                                         <li class="divider mtb10"></li>
-                                        <h3>Tujuan Pelatihan</h3>
                                         {foreach $custom_fields_training_objective['basic'] as $custom_field_training_objective}
+                                        {if $custom_field_training_objective['value']}
+                                        <h3>Tujuan Pelatihan</h3>
                                         {$custom_field_training_objective['value']}
+                                        {/if}
                                         {/foreach}
                                         <!-- </div> -->
                                     </div>
