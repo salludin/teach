@@ -175,7 +175,7 @@
                                     <div class="about-list">
                                         <!-- <div class="js_readmore overflow-hidden"> -->
                                         <h3>Deskripsi</h3>
-                                            {$event['event_description']}
+                                        {htmlspecialchars_decode($event['event_description'], ENT_QUOTES)}        
                                         <li class="divider mtb10"></li>
                                         {foreach $custom_fields_training_objective['basic'] as $custom_field_training_objective}
                                         {if $custom_field_training_objective['value']}
