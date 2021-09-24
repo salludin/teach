@@ -35,9 +35,9 @@
                 </ul>
                 {if $user->_data['can_create_events']}
                     <div class="mt10 float-right">
-                        <button class="btn btn-sm btn-success d-none d-lg-block" data-toggle="modal" data-url="#create-event">
+                        <a class="btn btn-sm btn-success d-none d-lg-block" href="{$system['system_url']}/create_event">
                             <i class="fa fa-plus-circle mr5"></i>{__("Create Event")}
-                        </button>
+                        </a>
                         <button class="btn btn-sm btn-icon btn-success d-block d-lg-none" data-toggle="modal" data-url="#create-event">
                             <i class="fa fa-plus-circle"></i>
                         </button>
