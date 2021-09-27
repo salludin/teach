@@ -177,10 +177,10 @@
                                         <h3>Deskripsi</h3>
                                         {htmlspecialchars_decode($event['event_description'], ENT_QUOTES)}        
                                         <li class="divider mtb10"></li>
-                                        {foreach $custom_fields_training_objective['basic'] as $custom_field_training_objective}
-                                        {if $custom_field_training_objective['value']}
+                                        {foreach $custom_fields['Training Objectives'] as $custom_field}
+                                        {if $custom_field['value']}
                                         <h3>Tujuan Pelatihan</h3>
-                                        {$custom_field_training_objective['value']}
+                                        {$custom_field['value']}
                                         {/if}
                                         {/foreach}
                                         <!-- </div> -->

@@ -13432,7 +13432,7 @@ class User {
                     if($args['get'] == "profile" && is_empty($field['value'])) {
                         continue;
                     }
-                    $fields[$field['place']][] = $field;
+                    $fields[$field['label']][] = $field;
                 }
             }
         }
