@@ -58,17 +58,23 @@
                                     </li>
                                     <li>
                                         <div class="about-list-item">
-                                            <i class="fas fa-tags fa-fw fa-lg"></i>
+                                            <i class="fa fa-tags fa-fw fa-lg"></i>
                                         {if $custom_fields['Price']}
                                         {foreach $custom_fields['Price'] as $custom_field}
                                         {if $custom_field['value']}
-                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Rp. {number_format($custom_field['value'])}</a>
+                                            <a class="btn btn-sm btn-success d-none d-lg-block" href="{$system['system_url']}/buy/{$event['event_id']}/{$user->_data['user_id']}">
+                                            {number_format($custom_field['value'])}
+                                            </a>
                                         {else}
-                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Gratis</a>
+                                            <a class="btn btn-sm btn-success d-none d-lg-block" >
+                                            Gratis
+                                            </a>
                                         {/if}
                                         {/foreach}
                                         {else}
-                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Gratis</a>
+                                            <a class="btn btn-sm btn-success d-none d-lg-block" >
+                                            Gratis
+                                            </a>
                                         {/if}
                                             
                                         </div>
@@ -198,7 +204,7 @@
                                         <!-- </div> -->
                                         <li class="divider mtb10"></li>
                                         {if $custom_fields['Price']}
-                                        <a class="btn btn-sm btn-success d-none d-lg-block" href="{$system['system_url']}/buy/{$event['event_id']}/$user->_data['user_id']">
+                                        <a class="btn btn-sm btn-primary d-none d-lg-block" href="{$system['system_url']}/buy/{$event['event_id']}/{$user->_data['user_id']}">
                                         Daftar Sekarang
                                         </a>
                                         {/if}
