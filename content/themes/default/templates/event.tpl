@@ -58,22 +58,22 @@
                                     </li>
                                     <li>
                                         <div class="about-list-item">
-                                            <i class="fa fa-tags fa-fw fa-lg"></i>
+                                            
                                         {if $custom_fields['Price']}
                                         {foreach $custom_fields['Price'] as $custom_field}
                                         {if $custom_field['value']}
                                             <a class="btn btn-sm btn-success d-none d-lg-block" href="{$system['system_url']}/buy/{$event['event_id']}/{$user->_data['user_id']}">
-                                            {number_format($custom_field['value'])}
+                                            Rp. {number_format($custom_field['value'])}
                                             </a>
                                         {else}
                                             <a class="btn btn-sm btn-success d-none d-lg-block" >
-                                            Gratis
+                                            GRATIS
                                             </a>
                                         {/if}
                                         {/foreach}
                                         {else}
                                             <a class="btn btn-sm btn-success d-none d-lg-block" >
-                                            Gratis
+                                            GRATIS
                                             </a>
                                         {/if}
                                             
