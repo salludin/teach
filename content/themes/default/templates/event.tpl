@@ -62,14 +62,17 @@
                                         {if $custom_fields['Price']}
                                         {foreach $custom_fields['Price'] as $custom_field}
                                         {if $custom_field['value']}
-                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">{$custom_field['value']}</a>
+                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">{money_format('Rp. ', $custom_field['value'])}</a>
                                         {else}
                                             <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Gratis</a>
                                         {/if}
                                         {/foreach}
+                                        {else}
+                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Gratis</a>
                                         {/if}
                                             
                                         </div>
+                                        }
                                     </li>
                                     <li>
                                         <div class="about-list-item">
