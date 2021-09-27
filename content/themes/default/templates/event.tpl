@@ -59,7 +59,16 @@
                                     <li>
                                         <div class="about-list-item">
                                             <i class="fa fa-user fa-fw fa-lg"></i>
-                                            {__("Hosted By")} <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">{$event['user_firstname']} {$event['user_lastname']}</a>
+                                        {if $custom_fields['Price']}
+                                        {foreach $custom_fields['Price'] as $custom_field}
+                                        {if $custom_field['value']}
+                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">{$custom_field['value']}</a>
+                                        {else}
+                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Gratis</a>
+                                        {/if}
+                                        {/foreach}
+                                        {/if}
+                                            
                                         </div>
                                     </li>
                                     <li>
@@ -185,13 +194,6 @@
                                         {/foreach}
                                         <!-- </div> -->
                                         <li class="divider mtb10"></li>
-                                        {if $custom_fields['price']}
-                                        {foreach $custom_fields['price'] as $custom_field}
-                                        {if $custom_field['value']}
-                                        {$custom_field['value']}
-                                        {/if}
-                                        {/foreach}
-                                        {/if}
 
                                     </div>
                                 {/if}
