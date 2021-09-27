@@ -35,6 +35,7 @@ try {
 	/* get the connection */
 	$event['i_admin'] = $user->check_event_adminship($user->_data['user_id'], $event['event_id']);
 	$event['i_joined'] = $user->check_event_membership($user->_data['user_id'], $event['event_id']);
+	$post['article']['parsed_text'] = htmlspecialchars_decode($post['article']['text'], ENT_QUOTES);
 
 	// [2] get view content
 	/* check event privacy */
@@ -57,7 +58,6 @@ try {
 		case '':
 			/* get custom fields */
 			$smarty->assign('custom_fields', $user->get_custom_fields( array("for" => "event", "get" => "profile", "node_id" => $event['event_id']) ));
-			$smarty->assign('custom_fields_training_objective', $user->get_custom_fields_training_objective( array("for" => "event", "get" => "profile", "node_id" => $event['event_id']) ));
 			/* get invites */
 			$event['invites'] = $user->get_event_invites($event['event_id']);
 

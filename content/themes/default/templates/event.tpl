@@ -184,6 +184,15 @@
                                         {/if}
                                         {/foreach}
                                         <!-- </div> -->
+                                        <li class="divider mtb10"></li>
+                                        {if $custom_fields['price']}
+                                        {foreach $custom_fields['price'] as $custom_field}
+                                        {if $custom_field['value']}
+                                        {$custom_field['value']}
+                                        {/if}
+                                        {/foreach}
+                                        {/if}
+
                                     </div>
                                 {/if}
                                 </div>
