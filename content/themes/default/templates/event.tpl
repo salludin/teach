@@ -58,11 +58,11 @@
                                     </li>
                                     <li>
                                         <div class="about-list-item">
-                                            <i class="fa fa-user fa-fw fa-lg"></i>
+                                            <i class="fas fa-tags fa-fw fa-lg"></i>
                                         {if $custom_fields['Price']}
                                         {foreach $custom_fields['Price'] as $custom_field}
                                         {if $custom_field['value']}
-                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Rp. {number_format($custom_field['value'], 2)}</a>
+                                            <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Rp. {number_format($custom_field['value'])}</a>
                                         {else}
                                             <a target="_blank" href="{$system['system_url']}/{$event['user_name']}">Gratis</a>
                                         {/if}
@@ -197,7 +197,11 @@
                                         {/foreach}
                                         <!-- </div> -->
                                         <li class="divider mtb10"></li>
-
+                                        {if $custom_fields['Price']}
+                                        <a class="btn btn-sm btn-success d-none d-lg-block" href="{$system['system_url']}/buy/{$event['event_id']}/$user->_data['user_id']">
+                                        Daftar Sekarang
+                                        </a>
+                                        {/if}
                                     </div>
                                 {/if}
                                 </div>
