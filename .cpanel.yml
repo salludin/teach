@@ -7,4 +7,3 @@ deployment:
     - /bin/cp events.php $DEPLOYPATH
     - /bin/cp create_event.php $DEPLOYPATH
     - /bin/cp -R content $DEPLOYPATH
-    - /bin/cp -R includes $DEPLOYPATH
