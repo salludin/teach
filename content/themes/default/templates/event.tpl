@@ -58,6 +58,28 @@
                                     </li>
                                     <li>
                                         <div class="about-list-item">
+                                            <i class="fa fa-tag fa-fw fa-lg"></i>
+                                            {__($event['event_category_name'])}
+                                        </div>
+                                    </li>
+                                    {if $event['event_location']}
+                                        <!-- event location -->
+                                        <li>
+                                            <div class="about-list-item">
+                                                <i class="fa fa-map-marker fa-fw fa-lg"></i>
+                                                {$event['event_location']}
+                                            </div>
+                                        </li>
+                                        {if $system['geolocation_enabled']}
+                                        <div style="margin-left: -20px; margin-right: -20px;">
+                                            <iframe width="100%" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?key={$system['geolocation_key']}&amp;q={$event['event_location']}&amp;language=en"></iframe>
+                                        </div>
+                                        {/if}
+                                        <!-- event location -->
+                                    {/if}
+                                    <li class="divider mtb10"></li>
+                                    <li>
+                                        <div class="">
                                             
                                         {if $custom_fields['Price']}
                                         {foreach $custom_fields['Price'] as $custom_field}
@@ -80,28 +102,6 @@
                                         </div>
                                         
                                     </li>
-                                    <li>
-                                        <div class="about-list-item">
-                                            <i class="fa fa-tag fa-fw fa-lg"></i>
-                                            {__($event['event_category_name'])}
-                                        </div>
-                                    </li>
-                                    {if $event['event_location']}
-                                        <!-- event location -->
-                                        <li>
-                                            <div class="about-list-item">
-                                                <i class="fa fa-map-marker fa-fw fa-lg"></i>
-                                                {$event['event_location']}
-                                            </div>
-                                        </li>
-                                        {if $system['geolocation_enabled']}
-                                        <div style="margin-left: -20px; margin-right: -20px;">
-                                            <iframe width="100%" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?key={$system['geolocation_key']}&amp;q={$event['event_location']}&amp;language=en"></iframe>
-                                        </div>
-                                        {/if}
-                                        <!-- event location -->
-                                    {/if}
-                                    <li class="divider mtb10"></li>
 
                                 </ul>
                             </div>
