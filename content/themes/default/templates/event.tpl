@@ -80,13 +80,19 @@
                                     <li class="divider mtb10"></li>
                                     <li>
                                         <div class="">
-                                            
+                                           
                                         {if $custom_fields['Price']}
                                         {foreach $custom_fields['Price'] as $custom_field}
                                         {if $custom_field['value']}
+                                            {if $user->_data['user_id']}
                                             <a class="btn btn-sm btn-success d-none d-lg-block" href="{$system['system_url']}/buy/{$event['event_id']}/{$user->_data['user_id']}">
                                             Rp. {number_format($custom_field['value'])}
                                             </a>
+                                            {else}
+                                            <button class="btn btn-sm btn-success d-none d-lg-block" data-toggle="modal" data-url="#create-event">
+                                            <i class="fa fa-plus-circle mr5"></i>Rp. {number_format($custom_field['value'])}
+                                            </button>
+                                            {/if}
                                         {else}
                                             <a class="btn btn-sm btn-success d-none d-lg-block" >
                                             GRATIS
