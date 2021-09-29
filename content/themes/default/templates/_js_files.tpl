@@ -242,7 +242,7 @@
 <!-- Dependencies Libs [jQuery|Bootstrap] -->
 
 <!-- Dependencies Plugins -->
-<script src="{$system['system_url']}/includes/assets/js/plugins/mustache/mustache.min.js"></script> 
+<script src="{$system['system_url']}/includes/assets/js/plugins/mustache/mustache.min.js" {if !$user->_logged_in}defer{/if}></script>
 <script src="{$system['system_url']}/includes/assets/js/plugins/jquery.form/jquery.form.min.js" {if !$user->_logged_in}defer{/if}></script>
 <script src="{$system['system_url']}/includes/assets/js/plugins/jquery.inview/jquery.inview.min.js" {if !$user->_logged_in}defer{/if}></script>
 <script src="{$system['system_url']}/includes/assets/js/plugins/autosize/autosize.min.js" {if !$user->_logged_in}defer{/if}></script>
@@ -376,7 +376,7 @@
 <!-- Dependencies Plugins -->
 
 <!-- Sngine [JS] -->
-<script src="{$system['system_url']}/includes/assets/js/sngine/core.js"></script>
+<script src="{$system['system_url']}/includes/assets/js/sngine/core.js" {if !$user->_logged_in}defer{/if}></script>
 {if $user->_logged_in}
     <script src="{$system['system_url']}/includes/assets/js/sngine/user.js"></script>
     <script src="{$system['system_url']}/includes/assets/js/sngine/post.js"></script>

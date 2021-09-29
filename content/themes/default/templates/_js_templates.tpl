@@ -44,7 +44,26 @@
         <p class="mt20">{literal}{{message}}{/literal}</p>
     </div>
 </script>
-
+<script id="buy-event" type="text/template">
+            <div class="modal-header">
+                <h6 class="modal-title">{__("Create New Event")}</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="js_ajax-forms" data-url="pages_groups_events/create.php?type=event&do=create">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-control-label" for="title">{__("Name Your Event")}</label>
+                        <input type="text" class="form-control" name="title" id="title">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">{__("Cancel")}</button>
+                    <button type="submit" class="btn btn-primary">{__("Create")}</button>
+                </div>
+            </form>
+</script>
 <script id="modal-error" type="text/template">
     <div class="modal-body text-center">
         <div class="big-icon error">
@@ -1388,26 +1407,6 @@
                     <!-- error -->
                     <div class="alert alert-danger mb0 mt10 x-hidden"></div>
                     <!-- error -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">{__("Cancel")}</button>
-                    <button type="submit" class="btn btn-primary">{__("Create")}</button>
-                </div>
-            </form>
-        </script>
-        <script id="buy-event" type="text/template">
-            <div class="modal-header">
-                <h6 class="modal-title">{__("Create New Event")}</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form class="js_ajax-forms" data-url="pages_groups_events/create.php?type=event&do=create">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="form-control-label" for="title">{__("Name Your Event")}</label>
-                        <input type="text" class="form-control" name="title" id="title">
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">{__("Cancel")}</button>
