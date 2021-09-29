@@ -89,8 +89,8 @@
                                             Rp. {number_format($custom_field['value'])}
                                             </a>
                                             {else}
-                                            <button class="btn btn-sm btn-success d-none d-lg-block" data-toggle="modal" data-url="#create-event">
-                                            <i class="fa fa-plus-circle mr5"></i>Rp. {number_format($custom_field['value'])}
+                                            <button class="btn btn-sm btn-success d-none d-lg-block" data-toggle="modal" data-url="#buy-event">
+                                            Rp. {number_format($custom_field['value'])}
                                             </button>
                                             {/if}
                                         {else}
