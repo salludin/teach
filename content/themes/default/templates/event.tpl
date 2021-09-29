@@ -210,9 +210,15 @@
                                         <!-- </div> -->
                                         <li class="divider mtb10"></li>
                                         {if $custom_fields['Price']}
+                                        {if $user->_data['user_id']}
                                         <a class="btn btn-sm btn-primary d-none d-lg-block" href="{$system['system_url']}/buy/{$event['event_id']}/{$user->_data['user_id']}">
                                         Daftar Sekarang
                                         </a>
+                                        {else}
+                                        <a class="btn btn-sm btn-primary d-none d-lg-block" data-toggle="modal" data-url="#buy-event">
+                                        Daftar Sekarang
+                                        </a>
+                                        {/if}
                                         {/if}
                                     </div>
                                 {/if}

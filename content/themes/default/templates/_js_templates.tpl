@@ -46,21 +46,28 @@
 </script>
 <script id="buy-event" type="text/template">
             <div class="modal-header">
-                <h6 class="modal-title">{__("Create New Event")}</h6>
+                <h6 class="modal-title">{__("Event Registration")}</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form class="js_ajax-forms" data-url="pages_groups_events/create.php?type=event&do=create">
+            <form class="js_ajax-forms" data-url="">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="form-control-label" for="title">{__("Name Your Event")}</label>
+                        <label class="form-control-label" for="title">{__("Fullname")}</label>
+                        <input type="text" class="form-control" name="title" id="title">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="title">{__("Email")}</label>
+                        <input type="text" class="form-control" name="title" id="title">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="title">{__("Phone Number")}</label>
                         <input type="text" class="form-control" name="title" id="title">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">{__("Cancel")}</button>
-                    <button type="submit" class="btn btn-primary">{__("Create")}</button>
+                    <button type="submit" class="btn btn-primary">{__("Register")}</button>
                 </div>
             </form>
 </script>
