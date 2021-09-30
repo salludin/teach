@@ -56,9 +56,13 @@ $createInvoice = \Xendit\Invoice::create($params);
 $id = $createInvoice['id'];
 $external_id = $createInvoice['external_id'];
 $url = $createInvoice['invoice_url'];
-$end_date = date_format($createInvoice['expiry_date'], 'Y-m-d H:i:s');;
+$triggerOn = $createInvoice['expiry_date'];
+$user_tz = 'Asia/Jakarta';
+$schedule_date = new DateTime($triggerOn, new DateTimeZone($user_tz) );
+$schedule_date->setTimeZone(new DateTimeZone('Asia/Jakarta'));
+$end_date =  $schedule_date->format('Y-m-d H:i:s');
 $Name = $createInvoice['customer']['given_names'];
-$item_name = $createInvoice['items']['name'];
+$item_name = $createInvoice['items']['0']['name'];
 $subject = 'Informasi Pembayaran Event ' . $event_name . '';
 
 //$body = get_email_template("notification_payment_email", $subject, ["first_name" => $profile['first_name'], "last_name" => $profile['last_name'], "email_verification_code" => $url]);
