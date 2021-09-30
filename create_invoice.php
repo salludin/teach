@@ -33,23 +33,21 @@ require('bootloader.php');
 Xendit::setApiKey('xnd_development_yiVQcbbYvEgmbUE9reiJBmXbdm2r0SzjsE16lk3IykQrHbKw1JnToeNbzUwrT6i');
 
 $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
+    'amount' => $event_amount,
     'payer_email' => $user_email,
+    'description' => 'Pendaftaran Event ' . $event_name . '',
     'customer' => [
         'given_names' => $fullname,
         'email' => $user_email,
         'mobile_number' => $user_phone
     ],
     'items' => [
-        'name' => $event_name,
-        'quantity' => 1,
-        'price' => $event_amount
-    ],
-    'fees' => [
-        'type' => 'ADMIN',
-        'value' => 3650
-    ],
-    'description' => 'Pendaftaran Event ' . $event_name . '',
-    'amount' => $event_amount
+            [
+                'name' => $event_name,
+                'price' => $event_amount,
+                'quantity' => 1
+            ]
+        ]
 ];
 
 $createInvoice = \Xendit\Invoice::create($params);
