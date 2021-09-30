@@ -56,9 +56,9 @@ $createInvoice = \Xendit\Invoice::create($params);
 $id = $createInvoice['id'];
 $external_id = $createInvoice['external_id'];
 $url = $createInvoice['invoice_url'];
-$end_date = $createInvoice['expiry_date'];
-$Name = $createInvoice['given_names'];
-$item_name = $createInvoice['name'];
+$end_date = date_format($createInvoice['expiry_date'], 'Y-m-d H:i:s');;
+$Name = $createInvoice['customer']['given_names'];
+$item_name = $createInvoice['items']['name'];
 $subject = 'Informasi Pembayaran Event ' . $event_name . '';
 
 //$body = get_email_template("notification_payment_email", $subject, ["first_name" => $profile['first_name'], "last_name" => $profile['last_name'], "email_verification_code" => $url]);
@@ -82,14 +82,15 @@ $email = array(
     'subject' => $subject,
     'template' => array(
         'id' => '662224',
-    ),
     'variables' => array(
         'Name' => $Name,
         'end_date' => $end_date,
         'order_id' => $external_id,
         'item.name' => $item_name,
         'item.price' => $event_amount,
+        'link' => $url,
 
+    )
     ),
     'from' => array(
         'name' => 'Teachin.id',
