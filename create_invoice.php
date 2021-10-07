@@ -15,6 +15,8 @@ use Xendit\Xendit;
 
 require 'vendor/autoload.php';
 require('bootloader.php');
+
+    if($_GET['user_id'] !== ''){
     $get_profile = $db->query(sprintf("SELECT * FROM users WHERE user_id = %s", secure($_GET['user_id']))) or _error("SQL_ERROR_THROWEN");
     if($get_profile->num_rows == 0) {
         _error(404);
@@ -23,13 +25,19 @@ require('bootloader.php');
     $user_email = $profile['user_email'];
     $user_phone = $profile['user_phone'];
     $fullname = $profile['user_firstname'] . ' ' . $profile['user_lastname'];
+    }else{
+        $user_email = $_POST['email'];
+        $user_phone = $_POST['phone'];
+        $fullname = $_POST['fullname']
+    }
+
     $get_event = $db->query(sprintf("SELECT * FROM events  WHERE event_id = %s", secure($_GET['event_id']) )) or _error("SQL_ERROR_THROWEN");
     if($get_event->num_rows == 0) {
         _error(404);
     }
     $event = $get_event->fetch_assoc();
     $event_name = $event['event_title'];
-    $event_amount = $event['event_amount'];
+    $event_amount = number_format($event['event_amount']);
     $event_img = 'https://teachin.id/content/uploads/' . $event['event_cover'] . '';
     $event_date = $event['event_start_date']|date_format:"%B %e";
 Xendit::setApiKey('xnd_development_yiVQcbbYvEgmbUE9reiJBmXbdm2r0SzjsE16lk3IykQrHbKw1JnToeNbzUwrT6i');
@@ -100,7 +108,6 @@ $email = array(
         'item.img' => $event_img,
         'item.name' => $item_name,
         'date' => $event_date,
-        'item.price' => $event_amount,
         'link' => $url,
         'total' => $event_amount,
 

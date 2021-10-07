@@ -51,19 +51,19 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form class="js_ajax-forms" data-url="">
+            <form class="js_ajax-forms" data-url="{$system['system_url']}/buy/{$event['event_id']}">
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="form-control-label" for="title">{__("Fullname")}</label>
-                        <input type="text" class="form-control" name="title" id="title">
+                        <input type="text" class="form-control" name="fullname" id="fullname">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="title">{__("Email")}</label>
-                        <input type="text" class="form-control" name="title" id="title">
+                        <input type="text" class="form-control" name="email" id="email">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="title">{__("Phone Number")}</label>
-                        <input type="text" class="form-control" name="title" id="title">
+                        <input type="text" class="form-control" name="phone" id="phone">
                     </div>
                 </div>
                 <div class="modal-footer">
