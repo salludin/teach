@@ -30,7 +30,8 @@ require('bootloader.php');
     $event = $get_event->fetch_assoc();
     $event_name = $event['event_title'];
     $event_amount = $event['event_amount'];
-    $event_img = 'https://teachin.id/content/uploads/' . $event['event_cover'] . ''
+    $event_img = 'https://teachin.id/content/uploads/' . $event['event_cover'] . '';
+    $event_date = $event['event_start_date']|date_format:"%B %e";
 Xendit::setApiKey('xnd_development_yiVQcbbYvEgmbUE9reiJBmXbdm2r0SzjsE16lk3IykQrHbKw1JnToeNbzUwrT6i');
 
 $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
@@ -100,6 +101,7 @@ $email = array(
         'item.name' => $item_name,
         'item.price' => $event_amount,
         'link' => $url,
+        'total' => $event_amount,
 
     )
     ),
