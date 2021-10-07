@@ -30,6 +30,7 @@ require('bootloader.php');
     $event = $get_event->fetch_assoc();
     $event_name = $event['event_title'];
     $event_amount = $event['event_amount'];
+    $event_img = 'https://teachin.id/content/uploads/' . $event['event_cover'] . ''
 Xendit::setApiKey('xnd_development_yiVQcbbYvEgmbUE9reiJBmXbdm2r0SzjsE16lk3IykQrHbKw1JnToeNbzUwrT6i');
 
 $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
@@ -56,11 +57,15 @@ $createInvoice = \Xendit\Invoice::create($params);
 $id = $createInvoice['id'];
 $external_id = $createInvoice['external_id'];
 $url = $createInvoice['invoice_url'];
-$triggerOn = $createInvoice['expiry_date'];
+$triggerOn_end = $createInvoice['expiry_date'];
 $user_tz = 'Asia/Jakarta';
-$schedule_date = new DateTime($triggerOn, new DateTimeZone($user_tz) );
-$schedule_date->setTimeZone(new DateTimeZone('Asia/Jakarta'));
-$end_date =  $schedule_date->format('Y-m-d H:i:s');
+$schedule_date_end = new DateTime($triggerOn_end, new DateTimeZone($user_tz) );
+$schedule_date_end->setTimeZone(new DateTimeZone('Asia/Jakarta'));
+$end_date =  $schedule_date_end->format('Y-m-d H:i:s');
+$triggerOn_created = $createInvoice['created'];
+$schedule_date_created = new DateTime($triggerOn_created, new DateTimeZone($user_tz) );
+$schedule_date_created->setTimeZone(new DateTimeZone('Asia/Jakarta'));
+$created =  $schedule_date_created->format('Y-m-d H:i:s');
 $Name = $createInvoice['customer']['given_names'];
 $item_name = $createInvoice['items']['0']['name'];
 $subject = 'Informasi Pembayaran Event ' . $event_name . '';
@@ -90,6 +95,8 @@ $email = array(
         'Name' => $Name,
         'end_date' => $end_date,
         'order_id' => $external_id,
+        'order_date' => $created,
+        'item.img' => $event_img,
         'item.name' => $item_name,
         'item.price' => $event_amount,
         'link' => $url,

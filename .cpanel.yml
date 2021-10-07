@@ -2,10 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/u6574599/public_html/
-    - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp event.php $DEPLOYPATH
     - /bin/cp events.php $DEPLOYPATH
     - /bin/cp create_event.php $DEPLOYPATH
     - /bin/cp create_invoice.php $DEPLOYPATH
-    - /bin/cp -R content $DEPLOYPATH
-    - /bin/cp -R sendpulse $DEPLOYPATH
