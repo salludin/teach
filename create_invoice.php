@@ -99,6 +99,7 @@ $email = array(
         'order_date' => $created,
         'item.img' => $event_img,
         'item.name' => $item_name,
+        'date' => $event_date,
         'item.price' => $event_amount,
         'link' => $url,
         'total' => $event_amount,
