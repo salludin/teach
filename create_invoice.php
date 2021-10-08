@@ -73,7 +73,7 @@ if ($user_phone !== ''){
 
 
 $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
-    'amount' => $event_amount,
+    'amount' => $event_amount + 365,
     'payer_email' => $user_email,
     'description' => 'Pendaftaran Event ' . $event_name . '',
     'success_redirect_url' => $event_link,
@@ -88,11 +88,17 @@ $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' 
                 'price' => $event_amount,
                 'quantity' => 1
             ]
+        ],
+    'fees' => [
+            [
+                'type' => 'ADMIN',
+                'value' => 3650
+            ]
         ]
 ];
 }else{
     $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
-    'amount' => $event_amount,
+    'amount' => $event_amount + 3650,
     'payer_email' => $user_email,
     'description' => 'Pendaftaran Event ' . $event_name . '',
     'success_redirect_url' => $event_link,
@@ -105,6 +111,12 @@ $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' 
                 'name' => $event_name,
                 'price' => $event_amount,
                 'quantity' => 1
+            ]
+        ],
+    'fees' => [
+            [
+                'type' => 'ADMIN',
+                'value' => 3650
             ]
         ]
 ];
