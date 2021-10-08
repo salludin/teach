@@ -61,7 +61,8 @@ require('bootloader.php');
     $event_amount = $event['event_amount'];
     $custom_fields = $user->get_custom_fields( array("for" => "event", "get" => "profile", "node_id" => $event['event_id']));
     foreach ($custom_fields['Price'] as $custom_field) {
-    $event_amount = $custom_field['value']+3650;
+    $event_amount = $custom_field['value']; + 3650;
+    $price = $custom_field['value'];
     }
     foreach ($custom_fields['Link Registration'] as $custom_field) {
     $event_link = $custom_field['value'];
@@ -85,7 +86,7 @@ $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' 
     'items' => [
             [
                 'name' => $event_name,
-                'price' => $event_amount,
+                'price' => $price,
                 'quantity' => 1
             ]
         ],
@@ -109,7 +110,7 @@ $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' 
     'items' => [
             [
                 'name' => $event_name,
-                'price' => $event_amount,
+                'price' => $price,
                 'quantity' => 1
             ]
         ],
