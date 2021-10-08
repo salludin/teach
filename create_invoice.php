@@ -61,7 +61,7 @@ require('bootloader.php');
     $event_amount = $event['event_amount'];
     $custom_fields = $user->get_custom_fields( array("for" => "event", "get" => "profile", "node_id" => $event['event_id']));
     foreach ($custom_fields['Price'] as $custom_field) {
-    $event_amount = $custom_field['value'];
+    $event_amount = $custom_field['value']+3650;
     }
     foreach ($custom_fields['Link Registration'] as $custom_field) {
     $event_link = $custom_field['value'];
@@ -73,7 +73,7 @@ if ($user_phone !== ''){
 
 
 $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
-    'amount' => $event_amount + 365,
+    'amount' => $event_amount,
     'payer_email' => $user_email,
     'description' => 'Pendaftaran Event ' . $event_name . '',
     'success_redirect_url' => $event_link,
@@ -98,7 +98,7 @@ $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' 
 ];
 }else{
     $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
-    'amount' => $event_amount + 3650,
+    'amount' => $event_amount,
     'payer_email' => $user_email,
     'description' => 'Pendaftaran Event ' . $event_name . '',
     'success_redirect_url' => $event_link,
