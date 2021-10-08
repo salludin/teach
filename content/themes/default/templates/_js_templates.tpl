@@ -51,7 +51,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form class="js_ajax-forms" data-url="{$system['system_url']}/buy/{$event['event_id']}">
+            <form action="{$system['system_url']}/buy/{$event['event_id']}/NULL" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="form-control-label" for="title">{__("Fullname")}</label>
