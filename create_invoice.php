@@ -50,7 +50,7 @@ require('bootloader.php');
              $hp = '+62'.substr(trim($nohp), 1);
          }
      }
-     print $hp;
+     result $hp;
     }
     $user_phone = hp($nohp);
     }
