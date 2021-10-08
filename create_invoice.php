@@ -29,7 +29,7 @@ require('bootloader.php');
     $user_email = $_POST['email'];
     $fullname = $_POST['fullname'];
     $nohp = $_POST['phone'];
-    function hp($nohp) {
+
      // kadang ada penulisan no hp 0811 239 345
      $nohp = str_replace(" ","",$nohp);
      // kadang ada penulisan no hp (0274) 778787
@@ -43,16 +43,13 @@ require('bootloader.php');
      if(!preg_match('/[^+0-9]/',trim($nohp))){
          // cek apakah no hp karakter 1-3 adalah +62
          if(substr(trim($nohp), 0, 3)=='+62'){
-             $hp = trim($nohp);
+             $user_phone = trim($nohp);
          }
          // cek apakah no hp karakter 1 adalah 0
          elseif(substr(trim($nohp), 0, 1)=='0'){
-             $hp = '+62'.substr(trim($nohp), 1);
+             $user_phone = '+62'.substr(trim($nohp), 1);
          }
      }
-     result $hp;
-    }
-    $user_phone = hp($nohp);
     }
 
     $get_event = $db->query(sprintf("SELECT * FROM events  WHERE event_id = %s", secure($_GET['event_id']) )) or _error("SQL_ERROR_THROWEN");
@@ -62,14 +59,24 @@ require('bootloader.php');
     $event = $get_event->fetch_assoc();
     $event_name = $event['event_title'];
     $event_amount = $event['event_amount'];
+    $custom_fields = $user->get_custom_fields( array("for" => "event", "get" => "profile", "node_id" => $event['event_id']));
+    foreach ($custom_fields['Price'] as $custom_field) {
+    $event_amount = $custom_field['value'];
+    }
+    foreach ($custom_fields['Link Registration'] as $custom_field) {
+    $event_link = $custom_field['value'];
+    }
     $event_img = 'https://teachin.id/content/uploads/' . $event['event_cover'] . '';
     $event_date = $event['event_start_date'];
 Xendit::setApiKey('xnd_development_yiVQcbbYvEgmbUE9reiJBmXbdm2r0SzjsE16lk3IykQrHbKw1JnToeNbzUwrT6i');
+if ($user_phone !== ''){
+
 
 $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
     'amount' => $event_amount,
     'payer_email' => $user_email,
     'description' => 'Pendaftaran Event ' . $event_name . '',
+    'success_redirect_url' => $event_link,
     'customer' => [
         'given_names' => $fullname,
         'email' => $user_email,
@@ -83,7 +90,25 @@ $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' 
             ]
         ]
 ];
-
+}else{
+    $params = ['external_id' => $_GET['event_id'] . ' - ' . $_GET['user_id']. ' - ' . $event_name,
+    'amount' => $event_amount,
+    'payer_email' => $user_email,
+    'description' => 'Pendaftaran Event ' . $event_name . '',
+    'success_redirect_url' => $event_link,
+    'customer' => [
+        'given_names' => $fullname,
+        'email' => $user_email
+    ],
+    'items' => [
+            [
+                'name' => $event_name,
+                'price' => $event_amount,
+                'quantity' => 1
+            ]
+        ]
+];
+}
 $createInvoice = \Xendit\Invoice::create($params);
 
 
