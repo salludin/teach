@@ -1,6 +1,6 @@
 {if $_tpl == "box"}
     <li class="col-12 col-sm-6 col-lg-6 mb-3">
-        <div class="card product" style="min-height:390px">
+        <div class="card product" style="min-height:350px">
         <div class="product-image" >
         <div class="profle-date-wrapper" style="background-color:#5e72e4; color:white;">
             {$_event['event_start_date']|date_format:"%b"}<br>{$_event['event_start_date']|date_format:"%e"}
@@ -11,9 +11,9 @@
             </div>
             <div class="product-info">
                 <a class="h6" href="{$system['system_url']}/events/{$_event['event_id']}{if $_search}?ref=qs{/if}">{$_event['event_title']}</a>
-                <div>{$_event['event_interested']} {__("Interested")}</div>
+                <div>{ echo substr($_event['event_description'], 0, 8);}</div>
             </div>
-            <div class="product-info">
+            <!--<div class="product-info">
                 {if $_event['i_joined']['is_interested']}
                     <button type="button" class="btn btn-sm btn-primary js_uninterest-event" data-id="{$_event['event_id']}">
                         <i class="fa fa-check mr5"></i>{__("Interested")}
@@ -26,7 +26,7 @@
                 <button type="button" class="btn btn-sm btn-primary js_interest-event" data-id="{$_event['event_id']}">
                         <i class="fa fa-star mr5"></i>{__("Register")}
                     </button>
-            </div>
+            </div>-->
         </div>
     </li>
 {elseif $_tpl == "list"}
