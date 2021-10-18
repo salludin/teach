@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/u6574599/public_html/
-
+    - /bin/cp -R content $DEPLOYPATH
     - /bin/cp create_invoice.php $DEPLOYPATH
