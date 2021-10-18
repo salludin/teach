@@ -11,7 +11,7 @@
             </div>
             <div class="product-info">
                 <a class="h6" href="{$system['system_url']}/events/{$_event['event_id']}{if $_search}?ref=qs{/if}">{$_event['event_title']}</a>
-                <div>{ substr($_event['event_description'], 0, 8)}</div>
+                <div>{$_event['event_description']|SUBSTR:0,8}</div>
             </div>
             <!--<div class="product-info">
                 {if $_event['i_joined']['is_interested']}
