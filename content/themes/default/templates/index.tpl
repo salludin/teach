@@ -15,7 +15,7 @@
                 <img style="width: 80%;" class="d-none d-md-block" src="{$system['system_url']}/content/themes/{$system['theme']}/images/home/Conversation_concept_Artboard.svg">
         <div class="site-section index-intro" id="programs-section">
           <div class="col-lg-8 text-center"  data-aos="fade-up" data-aos-delay="" style="margin-left:25px;">
-            <p class="mb-4"><b style="color:#3367d6;">Teachin.id</b> merupakan website pendidikan indonesia yang ditujukan untuk para guru dan sekolah</p>
+            <p class="mb-4"><b style="color:#3367d6;">Teachin.id</b> merupakan website pendidikan Indonesia yang ditujukan untuk para guru dan sekolah</p>
           </div>
         </div>
             </div>
