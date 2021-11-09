@@ -94,15 +94,19 @@
                                             </a>
                                             {/if}
                                         {else}
-                                            <a class="btn btn-sm btn-success d-none d-lg-block" >
+                                        {foreach $custom_fields['Link Registration'] as $custom_field_link}
+                                            <a class="btn btn-sm btn-success d-none d-lg-block" href="{$custom_field_link['value']}">
                                             GRATIS
                                             </a>
+                                        {/foreach}
                                         {/if}
                                         {/foreach}
                                         {else}
-                                            <a class="btn btn-sm btn-success d-none d-lg-block" >
+                                        {foreach $custom_fields['Link Registration'] as $custom_field_link}
+                                            <a class="btn btn-sm btn-success d-none d-lg-block" href="{$custom_field_link['value']}">
                                             GRATIS
                                             </a>
+                                        {/foreach}
                                         {/if}
                                             
                                         </div>
